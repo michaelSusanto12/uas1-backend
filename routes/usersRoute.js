@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/userModel");
-const url = 'https://uas1.adaptable.app/'
-router.post( url + "/register", async (req, res) => {
+router.post( "/register", async (req, res) => {
   try {
     const newuser = new User(req.body);
     const user = await newuser.save();
